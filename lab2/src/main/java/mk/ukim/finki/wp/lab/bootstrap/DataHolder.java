@@ -31,10 +31,10 @@ public class DataHolder {
         artists.add(new Artist("Lady", "Gaga", "American singer, songwriter, and actress known for her flamboyant costumes and powerful vocals."));
 
         songs = new ArrayList<>();
-        songs.add(new Song("1", "Love Story", "Country pop", 2008, List.of(artists.get(0)), new Album()));
-        songs.add(new Song("2", "Someone Like You", "Pop", 2011, List.of(artists.get(1)), new Album()));
-        songs.add(new Song("3", "Just the Way You Are", "Reggae pop", 2010, List.of(artists.get(2)), new Album()));
-        songs.add(new Song("4", "Shape of You", "Pop", 2017, List.of(artists.get(3)), new Album()));
-        songs.add(new Song("5", "Bad Romance", "Electro pop", 2009, List.of(artists.get(4)), new Album()));
+        songs.add(new Song("1", "Love Story", "Country pop", 2008, List.of(artists.get(0)), new Album(1L, "Fearless", "Country pop", "2008", new ArrayList<>())));
+        songs.add(new Song("2", "Someone Like You", "Pop", 2011, List.of(artists.get(1)), new Album(2L, "21", "Pop", "2011", new ArrayList<>())));
+        songs.add(new Song("3", "Just the Way You Are", "Reggae pop", 2010, List.of(artists.get(2)), new Album(3L, "Doo-Wops & Hooligans", "Reggae pop", "2010", new ArrayList<>())));
+        songs.add(new Song("4", "Shape of You", "Pop", 2017, List.of(artists.get(3)), new Album(4L, "Divide", "Pop", "2017", new ArrayList<>())));
+        songs.add(new Song("5", "Bad Romance", "Electro pop", 2009, List.of(artists.get(4)), new Album(5L, "The Fame Monster", "Electro pop", "2009", new ArrayList<>())));
     }
 }

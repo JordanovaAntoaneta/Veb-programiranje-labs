@@ -19,5 +19,7 @@ public class AlbumServiceImpl implements AlbumService {
     public List<Album> findAll() {
         return albumRepository.findAll();
     }
+
+
 }
 
