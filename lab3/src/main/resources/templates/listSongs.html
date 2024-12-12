@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Songs - My Music Store</title>
+    <style type="text/css">
+        body {
+            width: 800px;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .actions {
+            display: flex;
+            gap: 5px;
+        }
+        .actions button, .actions a {
+            padding: 5px 10px;
+            text-decoration: none;
+            border: 1px solid #000;
+            background-color: #eee;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Welcome to My Music Store</h1>
+</header>
+<main>
+    <h2>Song List</h2>
+
+    <div th:if="${error}" style="color: red;">
+        <p th:text="${error}"></p>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Release Year</th>
+            <th>Album</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="song : ${songs}">
+            <td th:text="${song.getTitle()}">Song Title</td>
+            <td th:text="${song.getGenre()}">Song Genre</td>
+            <td th:text="${song.getReleaseYear()}">Release Year</td>
+            <td th:text="${song.getAlbum()}">Album Name</td>
+            <td class="actions">
+                <a th:href="@{/details/{id}(id=${song.getTrackId()})}" class="button" style="color: green;">Details</a>
+                <a th:href="@{/edit-form/{id}(id=${song.getTrackId()})}" class="button" style="color: darkgoldenrod;">Edit</a>
+                <a th:action="@{/songs/delete/${song.getTrackId()}}" method="post" style="display: inline;">
+                    <button type="submit" style="color: darkred;; border: none; ">Delete</button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="/songs/add-form" class="button">Add New Song</a>
+</main>
+</body>
+</html>
