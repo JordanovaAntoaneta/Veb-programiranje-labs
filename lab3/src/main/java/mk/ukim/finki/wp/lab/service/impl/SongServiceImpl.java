@@ -91,4 +91,14 @@ public class SongServiceImpl implements SongService {
 
         return song.getTrackId();
     }
+
+    @Override
+    public void saveSong(Song song) {
+        songRepository.save(song);
+    }
+
+    @Override
+    public void deleteSong(Long id) {
+        songRepository.deleteById(id);
+    }
 }

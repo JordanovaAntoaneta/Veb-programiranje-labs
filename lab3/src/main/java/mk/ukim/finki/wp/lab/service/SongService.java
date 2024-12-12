@@ -16,5 +16,9 @@ public interface SongService{
     void delete(Long id);
 
     String details(Long id);
+
+    void saveSong(Song song);
+
+    void deleteSong(Long id);
 }
 
