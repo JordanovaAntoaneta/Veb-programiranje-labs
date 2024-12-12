@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+@Repository("defaultAlbumRepository")
 public class AlbumRepository {
     private final List<Album> albums;
 

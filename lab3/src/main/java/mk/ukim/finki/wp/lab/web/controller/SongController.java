@@ -26,12 +26,21 @@ public class SongController {
         return "listSongs";
     }
 
-    @GetMapping("/add")
-    public String showAddSongForm(Model model) {
+    @GetMapping("/details/{id}")
+    public String showSongDetails(@PathVariable Long id, Model model) {
+        Song song = songService.findByTrackId(String.valueOf(id));
+        model.addAttribute("song", song);
+        return "songDetails";
+    }
+
+    @GetMapping("/edit-form/{id}")
+    public String showEditForm(@PathVariable Long id, Model model) {
+        Song song = songService.findByTrackId(String.valueOf(id));
+        model.addAttribute("song", song);
         model.addAttribute("albums", albumService.findAll());
-        model.addAttribute("song", new Song());
         return "add-song";
     }
+
 
     @PostMapping
     public String saveSong(@ModelAttribute Song song) {
@@ -43,6 +52,11 @@ public class SongController {
     public String deleteSong(@PathVariable Long id) {
         songService.deleteSong(id);
         return "redirect:/songs";
+    }
+
+    @GetMapping("/add-form")
+    public String redirectToAddForm() {
+        return "redirect:/songs/add";
     }
 }
 

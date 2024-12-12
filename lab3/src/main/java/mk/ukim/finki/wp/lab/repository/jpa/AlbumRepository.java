@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 
-@Repository
+@Repository("jpaAlbumRepository")
 public class AlbumRepository implements JpaRepository<Album, Long> {
     private final List<Album> albums;
 

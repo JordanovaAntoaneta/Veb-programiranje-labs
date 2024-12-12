@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-@Repository
+@Repository("defaultSongRepository")
 public class SongRepository {
 
     public List<Song> findAll(){

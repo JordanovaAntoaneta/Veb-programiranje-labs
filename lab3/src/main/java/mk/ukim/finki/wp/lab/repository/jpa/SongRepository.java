@@ -16,7 +16,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 
-@Repository
+@Repository("jpaSongRepository")
 public class SongRepository implements JpaRepository<Song, Long> {
 
     @Override
